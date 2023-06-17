@@ -1,5 +1,5 @@
 {
-  "name": "remix-app",
+  "name": "llm-jsonschema-test",
   "version": "0.1.0",
   "private": true,
   "sideEffects": false,
@@ -41,6 +41,7 @@
     "framer-motion": "10.12.16",
     "isbot": "3.6.10",
     "morgan": "1.10.0",
+    "openai": "3.3.0",
     "react": "18.2.0",
     "react-dom": "18.2.0",
     "remix-auth": "3.4.0",

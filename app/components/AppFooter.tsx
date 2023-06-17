@@ -10,7 +10,10 @@ export const AppFooter = () => {
         </Link>{' '}
       </Box>
       <Box>
-        <Link href="https://github.com/coji" color="blue.500">
+        <Link
+          href="https://github.com/coji/llm-jsonschema-test"
+          color="blue.500"
+        >
           GitHub
         </Link>
       </Box>

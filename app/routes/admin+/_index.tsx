@@ -4,12 +4,14 @@ import { useLoaderData } from '@remix-run/react'
 import { authenticator } from '~/services/auth.server'
 
 export const loader = async ({ request }: LoaderArgs) => {
-  await authenticator.isAuthenticated(request, { failureRedirect: '/' })
-  return json({})
+  const user = await authenticator.isAuthenticated(request, {
+    failureRedirect: '/',
+  })
+  return json({ user })
 }
 
 export default function AdminIndexPage() {
-  const loaderData = useLoaderData<typeof loader>()
+  const { user } = useLoaderData<typeof loader>()
 
   return (
     <Container
@@ -17,6 +19,8 @@ export default function AdminIndexPage() {
       display="grid"
       minH="100dvh"
       gridTemplateRows="auto 1fr"
-    ></Container>
+    >
+      {JSON.stringify(user, null, 2)}
+    </Container>
   )
 }

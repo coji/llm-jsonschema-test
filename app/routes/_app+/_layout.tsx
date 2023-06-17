@@ -1,4 +1,5 @@
-import { Box, Container } from '@chakra-ui/react'
+import { Container } from '@chakra-ui/react'
+import { Outlet } from '@remix-run/react'
 import { AppFooter, AppHeader } from '~/components'
 
 export default function IndexPage() {
@@ -11,7 +12,7 @@ export default function IndexPage() {
         minH="100dvh"
       >
         <AppHeader />
-        <Box>&nbsp;</Box>
+        <Outlet />
         <AppFooter />
       </Container>
     </>

@@ -1,5 +1,6 @@
 import type { FlexProps } from '@chakra-ui/react'
 import { Flex, Heading, Spacer } from '@chakra-ui/react'
+import { Link } from '@remix-run/react'
 import { AppLoginPane } from './AppLoginPane'
 
 type AppHeaderProps = FlexProps
@@ -12,7 +13,7 @@ export const AppHeader = ({ ...rest }: AppHeaderProps) => {
         py="2"
         textAlign="center"
       >
-        App
+        <Link to="/">LLM JSON Schema Test</Link>
       </Heading>
 
       <Spacer />

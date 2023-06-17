@@ -15,7 +15,7 @@ const googleStrategy = new GoogleStrategy(
   {
     clientID: process.env.GOOGLE_CLIENT_ID,
     clientSecret: process.env.GOOGLE_CLIENT_SECRET,
-    callbackURL: '/auth/callback/google',
+    callbackURL: '/auth/google/callback',
   },
   async ({ accessToken, refreshToken, extraParams, profile }) => {
     const user = await prisma.user.upsert({
@@ -44,3 +44,9 @@ const googleStrategy = new GoogleStrategy(
 
 authenticator.use(googleStrategy)
 export { authenticator }
+
+export const requireUser = (request: Request) => {
+  return authenticator.isAuthenticated(request, {
+    failureRedirect: '/login',
+  })
+}
