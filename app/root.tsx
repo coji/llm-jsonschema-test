@@ -16,7 +16,7 @@ import { keepAwake } from './services/shrink-to-zero.server'
 export const meta: V2_MetaFunction = () => [
   { charSet: 'utf-8' },
   { name: 'viewport', content: 'width=device-width,initial-scale=1' },
-  { title: 'App' },
+  { title: 'LLM JsonSchema Example' },
   { name: 'description', content: 'Awesome App.' },
 ]
 
